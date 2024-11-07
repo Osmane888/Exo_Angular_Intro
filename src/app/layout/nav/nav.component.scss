@@ -1,0 +1,17 @@
+:host{
+  display: flex;
+  background-color: cadetblue;
+  flex-direction: column;
+  width: 9rem;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+
+  h1{
+    font-size: 1.3rem;
+  }
+
+  li{
+    padding: 0.3rem;
+  }
+}
