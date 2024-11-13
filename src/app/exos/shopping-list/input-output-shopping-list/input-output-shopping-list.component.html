@@ -1,0 +1,19 @@
+<table>
+
+  <thead>
+  <tr>
+    <td>Product</td>
+    <td>Quantity</td>
+    <td>Action</td>
+  </tr>
+  </thead>
+
+  @for (item of itemsBis ; track item){
+    <tr>
+      <td>{{item}}</td>
+      <td>???</td>
+      <td><button type="button" (click)="deleteItemEmitter(item)">❌</button></td>
+    </tr>
+  }
+
+</table>

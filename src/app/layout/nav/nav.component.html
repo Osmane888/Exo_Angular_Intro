@@ -1,10 +1,42 @@
 <h1>nav works!</h1>
 
 <ul>
-  <li><a routerLink="/home">Home</a></li>
-  <li><a routerLink="/about">About</a></li>
-  <li><a routerLink="/exos">Exos</a></li>
-  <ul>
-    <li><a routerLink="/exos/exo01">Timer</a></li>
-  </ul>
+  @for(link of links ; track link.title){
+
+    @if(link.children){
+        <li (click)="setVisibility(link)">{{link.title}}</li>
+        @if(link.isVisible){
+          <ul>
+        @for(child of link.children ; track child.title){
+        <li><a [routerLink]="child.url">{{ child.title }}</a></li>
+        }
+          </ul>
+        }
+    }
+    @else {
+    <li><a [routerLink]="link.url">{{ link.title }}</a></li>
+    }
+  }
 </ul>
+
+
+
+<!--
+<ul>
+@for(link of links ; track link.title){
+
+  @if(link.children){
+    <li ></li>
+      @if(link.isVisible){
+        <ul>
+        @for(child of link.children ; track child.title){
+          <li><a [routerLink]="child.url">{{ child.title }}</a></li>
+        }
+        </ul>
+      }
+  } @else {
+    <li><a [routerLink]="link.url">{{ link.title}}</a></li>
+  }
+}
+</ul>
+-->

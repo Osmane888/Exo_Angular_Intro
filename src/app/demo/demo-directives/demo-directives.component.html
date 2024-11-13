@@ -1,0 +1,50 @@
+<h2>Demo Directives</h2>
+
+<section>
+  <h3>Component directives</h3>
+
+
+  <div>
+    <h4>NgStyle</h4>
+    <p class="christmas" [ngStyle]="{color:myColor}">🎄Joyeux Noel🎄</p>
+  </div>
+
+  <div>
+    <h4>NgClass</h4>
+    <p [ngClass]="{bold: isBold,big: isBig, italic: isItalic}">J'ai besoin d'une petite pause...</p>
+    <div class="buttons">
+      <button (click)="toggleIsBold()">Toggle Bold</button>
+      <button (click)="toggleIsBig()">Toggle Big</button>
+      <button (click)="toggleIsItalic()">Toggle Italic</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Structural directives</h3>
+  <h4>NgIf / if</h4>
+  <div>
+    @if(isDayTime){
+      <p *ngIf="isDayTime">🌞Jour🌞</p>
+    } @else {
+      <p *ngIf="!isDayTime">🌃Nuit🌃</p>
+    }
+  <button (click)="toggleIsDayTime()">Switch</button>
+  </div>
+
+  <h4>NgFor / for</h4>
+  <div class="cards">
+<!-- <div class="card" *ngFor="let trainer of trainers">
+     <h5>{{trainer.firstName}} {{trainer.lastName}}</h5>
+     <img [src]="'assets/images' + trainer.pictureUrl" [alt]="'Photo de ' + trainer.firstName">
+   </div> -->
+   @for(trainer of trainers; track trainer.id){
+    <div class="card">
+      <h5>{{trainer.firstName}} {{trainer.lastName}}</h5>
+      <img [src]="'assets/images' + trainer.pictureUrl" [alt]="'Photo de ' + trainer.firstName">
+     </div>
+    } @empty {
+     <p>La liste est vide</p>
+   }
+  </div>
+  </section>

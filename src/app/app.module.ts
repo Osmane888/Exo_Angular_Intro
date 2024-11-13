@@ -16,7 +16,7 @@ import { NavComponent } from './layout/nav/nav.component';
     AboutComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,

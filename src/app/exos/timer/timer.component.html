@@ -1,1 +1,9 @@
-<p>timer works!</p>
+
+<h1>Temps passé en cours</h1>
+
+<h2>{{secondes|timerPipe}}</h2>
+<div class="boutons">
+<button (click)="timerStart()" [disabled]="timer">Start</button>
+<button (click)="timerPause()" [disabled]="!timer"> Pause</button>
+<button (click)="timerReset()" [disabled]="secondes<=0">Reset</button>
+</div>

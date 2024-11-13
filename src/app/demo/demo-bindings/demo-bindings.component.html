@@ -1,0 +1,23 @@
+<h2>Demo Bindings</h2>
+
+<section>
+  <h3>Property binding</h3>
+  <h4>One way</h4>
+  <p>Permet de faire le lien entre une propriété ts vers le html (ONE WAY)</p>
+  <p>Le formateur du jour est {{formateur}}</p>
+  <p>Permet de faire le lien entre lien entre le ts vers le html et le html vers le ts (TWO WAY)</p>
+  <p>Dans le bâtiment {{batiment}}</p>
+  <input type="text" [(ngModel)]="batiment">
+</section>
+
+<section>
+  <h3>Attribute binding</h3>
+  <p>Votre nom est {{nom}}</p>
+  <input type="text" [placeholder]="placeholderText" [(ngModel)]="nom">
+</section>
+
+<section>
+  <h2>Qui doit un café à qui ?</h2>
+  <p>{{result ?? 'En attente du clique'}}</p>
+  <button (click)="getResult()">Play</button>
+</section>
