@@ -15,7 +15,7 @@ export class ShoppingListComponent {
     {name: "Static", quantity: 3},
     {name: "PlayStation 5", quantity: 4},
     {name: "Television", quantity: 2},
-    {name: "Macbook", quantity: 10},
+    {name: "Macbook", quantity: 1},
   ];
 
   itemSelected: string | undefined;
