@@ -6,7 +6,7 @@ import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 
 const routes: Routes = [
   {path:'exo01', component: TimerComponent},
-  {path:'exo02', component: ShoppingListComponent}
+  {path:'exo02', component: ShoppingListComponent},
 ];
 
 @NgModule({

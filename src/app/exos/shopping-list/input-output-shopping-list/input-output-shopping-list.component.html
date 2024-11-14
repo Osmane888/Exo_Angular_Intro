@@ -4,15 +4,19 @@
   <tr>
     <td>Product</td>
     <td>Quantity</td>
-    <td>Action</td>
+    <td>Actions</td>
   </tr>
   </thead>
 
-  @for (item of itemsBis ; track item){
+  @for (item of items ; track item.name ; let i = $index){
     <tr>
-      <td>{{item}}</td>
-      <td>???</td>
-      <td><button type="button" (click)="deleteItemEmitter(item)">❌</button></td>
+      <td>{{item.name}}</td>
+      <td>{{ item.quantity }}</td>
+      <td class="buttons">
+        <button (click)="triggerChangeList({index: i, changeType: ChangeTypeEnum.UP})"> ➕ </button>
+        <button (click)="triggerChangeList({index: i, changeType : ChangeTypeEnum.DOWN})"> ➖ </button>
+        <button (click)="triggerChangeList({index: i, changeType : ChangeTypeEnum.REMOVE})">❌</button>
+      </td>
     </tr>
   }
 

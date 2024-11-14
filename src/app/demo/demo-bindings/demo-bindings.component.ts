@@ -15,7 +15,7 @@ export class DemoBindingsComponent {
 
   names: string[] = ['Osmane', 'Amin', 'Ayoub', 'Nicolas', 'Viktor', 'Joeffrey', 'Christopher', 'Ana Maria'];
 
-  result: string = '';
+  result: string | null = null;
 
   getResult(): void{
     let winner = this.names[Math.floor(Math.random() * this.names.length)]

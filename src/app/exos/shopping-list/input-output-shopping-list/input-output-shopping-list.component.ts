@@ -1,4 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Product} from '../../../shared/models/product';
+import {ChangeList} from '../../../shared/models/change-list';
+import {ChangeTypeEnum} from '../../../shared/enums/change-type-enum';
 
 @Component({
   selector: 'app-input-output-shopping-list',
@@ -7,12 +10,15 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class InputOutputShoppingListComponent {
 
+  protected readonly ChangeTypeEnum = ChangeTypeEnum;
+
   @Input({required : true})
-  itemsBis!: string[];
+  items!: Product[];
 
-  @Output() deleteItemEvent = new EventEmitter<string>();
+  @Output()
+  private changeList: EventEmitter<ChangeList> = new EventEmitter<ChangeList>();
 
-  deleteItemEmitter(item : string){
-    this.deleteItemEvent.emit(item);
+  triggerChangeList(changeList : ChangeList){
+    this.changeList.emit(changeList);
   }
 }

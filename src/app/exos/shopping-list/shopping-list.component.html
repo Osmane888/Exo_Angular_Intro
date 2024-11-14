@@ -2,4 +2,4 @@
   <input type="text" [(ngModel)]="itemToAdd">
   <button (click)="addItem()">🟢</button>
 </div>
-<app-input-output-shopping-list (deleteItemEvent)="deleteItem($event)" [itemsBis]="items"></app-input-output-shopping-list>
+<app-input-output-shopping-list (changeList)="reactToChangeList($event)" [items]="items"></app-input-output-shopping-list>
